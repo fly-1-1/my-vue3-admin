@@ -1,6 +1,8 @@
 <template>
   <div>
-    my-admin-vue3
+    <el-button type="primary">Hello World</el-button>
+
+
   </div>
 </template>
 <script setup lang='ts'>
