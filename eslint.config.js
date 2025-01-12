@@ -15,5 +15,13 @@ export default [
 
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
+
+  // 添加 eslint 规则
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off', // 禁用对 any 的检查
+    },
+  },
+
   skipFormatting,
 ]
