@@ -4,13 +4,13 @@
     <el-row>
       <el-col :span="12"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form class="login_from">
+        <el-form :model="loginForm" :rules="rules" class="login_from" ref="loginFormRef">
           <h1>hello</h1>
           <h2>欢迎来到我的后台管理系统</h2>
-          <el-form-item>
+          <el-form-item prop="username">
             <el-input :prefix-icon="User" v-model="loginForm.username"></el-input>
           </el-form-item>
-          <el-form-item>
+          <el-form-item prop="password">
             <el-input :prefix-icon="Lock" type="password" v-model="loginForm.password" show-password></el-input>
           </el-form-item>
           <el-form-item>
@@ -30,13 +30,27 @@ import { ElNotification } from 'element-plus'
 
 const useStore = useUserStore();
 const router = useRouter();
-
 const loginForm = reactive({ username: 'admin', password: '123456' })
 const loading = ref(false)
+const loginFormRef = ref()
+
+
+const rules = {
+  username: [
+    { min: 3, max: 10, message: '用户名长度在 3 到 10 个字符', trigger: 'change' }
+  ],
+  password: []
+}
 
 const login = async () => {
   loading.value = true
-  setTimeout(() => { console.log('跳转到首页') }, 2000)
+  loginFormRef.value.validate((valid: boolean) => {
+    if (valid) {
+      return
+    } else {
+      loading.value = false
+    }
+  })
   useStore.userLogin(loginForm).then(() => {
     ElNotification({
       title: '登录成功',
