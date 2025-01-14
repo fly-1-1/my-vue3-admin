@@ -1,5 +1,17 @@
 @use './reset.scss';
 @use './variables.scss';
 
-//设置scss全局变量
-$color: red;
+//滚动条样式
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $base-menu-background;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: #f56c6c;
+  border-radius: 10px;
+}
