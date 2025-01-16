@@ -9,6 +9,8 @@ import router from './router'
 import pinia from './stores'
 import 'virtual:svg-icons-register'
 
+import globalComponent from '@/components'
+
 import App from './App.vue'
 
 const app = createApp(App)
@@ -23,6 +25,7 @@ app.use(ElementPlus, {
   locale: zhCn,
 })
 
+app.use(globalComponent)
 app.use(ElementPlus)
 app.use(router)
 app.use(pinia)
