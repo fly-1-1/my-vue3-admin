@@ -11,14 +11,7 @@
           text-color="rgb(179, 224.5, 156.5)"
           active-text-color="rgb(250, 181.5, 181.5)"
         >
-          <el-menu-item index="1">Processing Center</el-menu-item>
-          <el-menu-item index="2">数据大屏</el-menu-item>
-          <el-sub-menu index="3">
-            <template #title>权限管理</template>
-            <el-menu-item index="3-1">用户管理</el-menu-item>
-            <el-menu-item index="3-2">角色管理</el-menu-item>
-            <el-menu-item index="3-3">菜单管理</el-menu-item>
-          </el-sub-menu>
+          <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
     </div>
@@ -32,6 +25,10 @@
 </template>
 <script setup lang="ts">
 import Logo from './logo/index.vue'
+import Menu from './menu/index.vue'
+import useUserStore from '@/stores/modules/user'
+
+const userStore = useUserStore()
 </script>
 <style scoped lang="scss">
 .layout-container {
@@ -48,6 +45,9 @@ import Logo from './logo/index.vue'
     .el-scrollbar {
       width: 100%;
       height: calc(100vh - $base-menu-logo-height);
+      .el-menu {
+        border-right: none;
+      }
     }
   }
 

@@ -2,11 +2,15 @@
 import { defineStore } from 'pinia'
 import { reqLogin } from '@/api/user';
 
+//引入路由
+import { constantRoute } from '@/router/routes'
+
 //创建用户的小仓库
 const useUserStore = defineStore('User', {
   state: () => {
     return {
       token: localStorage.getItem('token') || '',
+      menuRoutes: constantRoute
     }
   },
   actions: {
