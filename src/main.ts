@@ -7,6 +7,7 @@ import './styles/index.scss'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import router from './router'
 import pinia from './stores'
+import 'virtual:svg-icons-register'
 
 import App from './App.vue'
 

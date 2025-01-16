@@ -19,7 +19,9 @@
     <div class="layout_tabbar">456</div>
     <!-- 内容展示区 -->
     <div class="layout_main">
-      <p style="height: 100000px">Hello World</p>
+      <p style="height: 100000px">
+        <SvgIcon name="home" color="pink" />
+      </p>
     </div>
   </div>
 </template>
@@ -27,6 +29,7 @@
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import useUserStore from '@/stores/modules/user'
+import SvgIcon from '@/components/SvgIcon/index.vue'
 
 const userStore = useUserStore()
 </script>
