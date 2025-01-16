@@ -5,7 +5,8 @@ export const constantRoute = [
     name: 'login',
     meta: {
       title: '登录',
-      hidden: true
+      hidden: true,
+      icon: "Promotion"
     },
   },
   {
@@ -14,7 +15,8 @@ export const constantRoute = [
     name: 'layout',
     meta: {
       title: 'layout',
-      hidden: false
+      hidden: false,
+      icon: "Avatar"
     },
     children: [
       {
@@ -22,15 +24,8 @@ export const constantRoute = [
         component: () => import('@/views/home/index.vue'),
         meta: {
           title: '首页',
-          hidden: true
-        }
-      },
-      {
-        path: '/ceshi',
-        component: () => import('@/views/home/index.vue'),
-        meta: {
-          title: '测试',
-          hidden: false
+          hidden: false,
+          icon: "HomeFilled"
         }
       }
     ]
@@ -41,7 +36,9 @@ export const constantRoute = [
     name: '404',
     meta: {
       title: '404',
-      hidden: true
+      hidden: true,
+      icon: "FolderDelete"
+
     }
   },
   {
@@ -50,7 +47,8 @@ export const constantRoute = [
     name: 'Any',
     meta: {
       title: '任意',
-      hidden: true
+      hidden: true,
+      icon: "Sunny"
     }
   }
 ]

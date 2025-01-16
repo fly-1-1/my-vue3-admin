@@ -20,7 +20,9 @@
     <!-- 内容展示区 -->
     <div class="layout_main">
       <p style="height: 100000px">
-        <SvgIcon name="lock" color="pink" />
+        <el-icon>
+          <Edit />
+        </el-icon>
       </p>
     </div>
   </div>
