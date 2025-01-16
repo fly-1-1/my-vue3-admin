@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <template v-for="(item, index) in menus" :key="index">
-    <el-menu-item v-if="!item.children" :index="item.path" @click="goRoute">
+    <el-menu-item v-if="!item.children" :index="item.path" @click="goRoute(item.path)">
       <template #title>
         <el-icon>
           <component :is="item.meta.icon"></component>
@@ -10,7 +10,11 @@
       </template>
     </el-menu-item>
 
-    <el-menu-item v-if="item.children && item.children.length === 1" :index="item.children[0].path">
+    <el-menu-item
+      v-if="item.children && item.children.length === 1"
+      :index="item.children[0].path"
+      @click="goRoute(item.children[0].path)"
+    >
       <template #title>
         <el-icon>
           <component :is="item.children[0].meta.icon"></component>
