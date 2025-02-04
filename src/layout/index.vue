@@ -10,13 +10,16 @@
           background-color="rgb(177.3, 179.4, 183.6)"
           text-color="rgb(179, 224.5, 156.5)"
           active-text-color="rgb(250, 181.5, 181.5)"
+          :default-active="route.path"
         >
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
     </div>
     <!-- 顶部的导航 -->
-    <div class="layout_tabbar">456</div>
+    <div class="layout_tabbar">
+      <Tabbar />
+    </div>
     <!-- 内容展示区 -->
     <div class="layout_main">
       <Main></Main>
@@ -27,20 +30,20 @@
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import Main from './main/index.vue'
+import Tabbar from './tabbar/index.vue'
 import useUserStore from '@/stores/modules/user'
-
+import { useRoute } from 'vue-router'
 const userStore = useUserStore()
+const route = useRoute()
 </script>
 <style scoped lang="scss">
 .layout-container {
   width: 100%;
   height: 100vh;
-  background: red;
 
   .layout_slider {
     width: $base-menu-width;
     height: 100vh;
-    background: $base-menu-background;
     background-color: rgb(221.7, 222.6, 224.4);
 
     .el-scrollbar {
@@ -58,7 +61,6 @@ const userStore = useUserStore()
     height: $base-tabbar-height;
     top: 0;
     left: $base-menu-width;
-    background: $base-tabbar-background;
   }
 
   .layout_main {
