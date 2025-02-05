@@ -7,6 +7,12 @@
   </router-view>
 </template>
 <script setup lang="ts"></script>
+
+<script lang="ts">
+export default {
+  name: 'MainComponent',
+}
+</script>
 <style scoped lang="scss">
 .fade-enter-from {
   opacity: 0;

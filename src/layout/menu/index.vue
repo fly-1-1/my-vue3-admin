@@ -53,4 +53,10 @@ const goRoute = (path: string) => {
 }
 </script>
 
+<script lang="ts">
+export default {
+  name: 'MenuComponent',
+}
+</script>
+
 <style scoped lang="scss"></style>

@@ -8,6 +8,13 @@
 <script setup lang="ts">
 import setting from '@/setting'
 </script>
+
+<script lang="ts">
+export default {
+  name: 'LogoComponent',
+}
+</script>
+
 <style scoped lang="scss">
 .logo {
   width: 100%;
